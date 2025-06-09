@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Winkelmandje - ClearCase</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/8a111eb1bb.js" crossorigin="anonymous"></script>
+
+  <script src="../js/script.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <div class="container nav">
+      <h1 class="logo">ClearCase</h1>
+      <nav class="navigation">
+        <ul>
+          <li><a href="index.html#home">Home</a></li>
+          <li><a href="producten.html">Producten</a></li>
+          <li><a href="overons.html">Over ons</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <a href="winkelmandje.html" class="cart"><i class="fa-solid fa-cart-shopping"></i> <span id="cart-count">0</span></a>
+    </div>
+  </header>
+
+  <main>
+    <section class="cart-products">
+      <div class="container">
+        <h2>Jouw winkelmandje</h2>
+        <div class="product-grid" id="cart-items"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 ClearCase. Alle rechten voorbehouden.</p>
+    </div>
+  </footer>
+  <script>
+    // Toon producten uit localStorage in dezelfde stijl als producten.html
+    const cartItemsDiv = document.getElementById("cart-items");
+    const cartProducts = JSON.parse(localStorage.getItem("cartProducts")) || [];
+    if (cartProducts.length === 0) {
+      cartItemsDiv.innerHTML = "<p>Je winkelmandje is leeg.</p>";
+    } else {
+      cartItemsDiv.innerHTML = cartProducts.map(prod => `
+        <div class="product-card">
+          <img src="${prod.img}" alt="${prod.title}">
+          <h3>${prod.title}</h3>
+          <p>${prod.price}</p>
+        </div>
+      `).join('');
+    }
+
+    // Update het winkelmandje-aantal in de header
+    const cartCount = document.getElementById("cart-count");
+    if (cartCount) cartCount.textContent = cartProducts.length;
+  </script>
+</body>
+</html>
