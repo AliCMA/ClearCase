@@ -1,64 +1,101 @@
 <!DOCTYPE html>
 <html lang="nl">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Winkelmandje - ClearCase</title>
-  <link rel="stylesheet" href="../css/style.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Winkelmandje - ClearCase</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/8a111eb1bb.js" crossorigin="anonymous"></script>
 
-  <script src="../js/script.js" defer></script>
+    <script src="../js/script.js" defer></script>
 </head>
+
 <body>
-  <header class="header">
-    <div class="container nav">
-      <h1 class="logo">ClearCase</h1>
-      <nav class="navigation">
-        <ul>
-          <li><a href="index.html#home">Home</a></li>
-          <li><a href="producten.html">Producten</a></li>
-          <li><a href="overons.html">Over ons</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-      <a href="winkelmandje.html" class="cart"><i class="fa-solid fa-cart-shopping"></i> <span id="cart-count">0</span></a>
-    </div>
-  </header>
+   <!-- Vervang de header in al je HTML-bestanden door deze structuur -->
+<header class="header">
+  <div class="container nav">
+    <h1 class="logo">ClearCase</h1>
+    <button class="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="main-nav">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav class="navigation" id="main-nav">
+      <ul>
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="producten.html">Producten</a></li>
+        <li><a href="overons.html">Over ons</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li class="cart-mobile">
+          <a href="winkelmandje.html" class="cart">
+            <svg width="22" height="22" viewBox="0 0 576 512" fill="currentColor" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+              <path d="M528.12 301.319l47.273-208A16 16 0 0 0 560 80H120l-9.4-44.5A24 24 0 0 0 87 16H24A16 16 0 0 0 24 48h49.6l70.2 332.3A64 64 0 1 0 256 464h192a64 64 0 1 0 61.6-80.3l-17.2-77.1zM504 416a32 32 0 1 1-32-32 32 32 0 0 1 32 32zm-288 0a32 32 0 1 1-32-32 32 32 0 0 1 32 32zm272-96H176.42l-7.2-32h315.38z"/>
+            </svg>
+            <span id="cart-count">0</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <a href="winkelmandje.html" class="cart cart-desktop">
+      <svg width="22" height="22" viewBox="0 0 576 512" fill="currentColor" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+        <path d="M528.12 301.319l47.273-208A16 16 0 0 0 560 80H120l-9.4-44.5A24 24 0 0 0 87 16H24A16 16 0 0 0 24 48h49.6l70.2 332.3A64 64 0 1 0 256 464h192a64 64 0 1 0 61.6-80.3l-17.2-77.1zM504 416a32 32 0 1 1-32-32 32 32 0 0 1 32 32zm-288 0a32 32 0 1 1-32-32 32 32 0 0 1 32 32zm272-96H176.42l-7.2-32h315.38z"/>
+      </svg>
+      <span id="cart-count-desktop">0</span>
+    </a>
+  </div>
+</header>
 
-  <main>
-    <section class="cart-products">
-      <div class="container">
-        <h2>Jouw winkelmandje</h2>
-        <div class="product-grid" id="cart-items"></div>
-      </div>
-    </section>
-  </main>
+    <main>
+        <section class="cart-products">
+            <div class="container">
+                <h2>Jouw winkelmandje</h2>
+                <div class="product-grid" id="cart-items"></div>
+            </div>
+        </section>
+    </main>
 
-  <footer class="footer">
-    <div class="container">
-      <p>&copy; 2025 ClearCase. Alle rechten voorbehouden.</p>
-    </div>
-  </footer>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 ClearCase. Alle rechten voorbehouden.</p>
+        </div>
+    </footer>
   <script>
     // Toon producten uit localStorage in dezelfde stijl als producten.html
     const cartItemsDiv = document.getElementById("cart-items");
-    const cartProducts = JSON.parse(localStorage.getItem("cartProducts")) || [];
-    if (cartProducts.length === 0) {
-      cartItemsDiv.innerHTML = "<p>Je winkelmandje is leeg.</p>";
-    } else {
-      cartItemsDiv.innerHTML = cartProducts.map(prod => `
-        <div class="product-card">
-          <img src="${prod.img}" alt="${prod.title}">
-          <h3>${prod.title}</h3>
-          <p>${prod.price}</p>
-        </div>
-      `).join('');
+    let cartProducts = JSON.parse(localStorage.getItem("cartProducts")) || [];
+
+    function renderCart() {
+        if (cartProducts.length === 0) {
+            cartItemsDiv.innerHTML = "<p>Je winkelmandje is leeg.</p>";
+        } else {
+            cartItemsDiv.innerHTML = cartProducts.map((prod, i) => `
+                <div class="product-card" data-index="${i}">
+                  <button class="remove-item" title="Verwijder" aria-label="Verwijder dit product">&times;</button>
+                  <img src="${prod.img}" alt="${prod.title}">
+                  <h3>${prod.title}</h3>
+                  <p>${prod.price}</p>
+                </div>
+            `).join('');
+        }
+        // Update het winkelmandje-aantal in de header
+        const cartCount = document.getElementById("cart-count");
+        if (cartCount) cartCount.textContent = cartProducts.length;
+
+        // Voeg event listeners toe aan de kruisjes
+        document.querySelectorAll('.remove-item').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                const index = parseInt(this.closest('.product-card').getAttribute('data-index'));
+                cartProducts.splice(index, 1);
+                localStorage.setItem("cartProducts", JSON.stringify(cartProducts));
+                renderCart();
+            });
+        });
     }
 
-    // Update het winkelmandje-aantal in de header
-    const cartCount = document.getElementById("cart-count");
-    if (cartCount) cartCount.textContent = cartProducts.length;
-  </script>
+    renderCart();
+</script>
 </body>
+
 </html>

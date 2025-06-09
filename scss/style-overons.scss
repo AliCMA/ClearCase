@@ -2,7 +2,140 @@
 
 // Specifieke stijlen voor overons.html
 .about {
-  background: #fff;
-  padding: 3rem 1rem;
+  background: linear-gradient(120deg, #f4f8fb 60%, #eaf3ff 100%);
+  padding: 4.5rem 2rem 4.5rem 2rem;
+  border-radius: 36px;
+  box-shadow: 0 12px 48px rgba(0, 122, 255, 0.17);
   text-align: center;
+  margin: 4rem auto 4rem auto;
+  max-width: 1100px;
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  // Sfeervolle decoratiecirkels
+  &::before {
+    content: "";
+    position: absolute;
+    top: -80px;
+    right: -80px;
+    width: 220px;
+    height: 220px;
+    background: radial-gradient(circle, #b3e0ff 0%, #eaf3ff 80%);
+    opacity: 0.32;
+    border-radius: 50%;
+    z-index: 0;
+    filter: blur(2px);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -70px;
+    left: -70px;
+    width: 180px;
+    height: 180px;
+    background: radial-gradient(circle, #007aff 0%, #eaf3ff 90%);
+    opacity: 0.15;
+    border-radius: 50%;
+    z-index: 0;
+    filter: blur(1px);
+  }
+
+  h2 {
+    color: #007aff;
+    font-size: 3.2rem; // Groter gemaakt
+    font-weight: 900;
+    margin-bottom: 2.5rem;
+    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 4px 24px rgba(0,122,255,0.10);
+    background: linear-gradient(90deg, #007aff 60%, #b3e0ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .about-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+    justify-content: center;
+    align-items: stretch;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+  }
+
+  .about-block {
+    background: rgba(255,255,255,0.97);
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(0,122,255,0.09);
+    padding: 2.1rem 1.7rem 2rem 1.7rem; // Groter gemaakt
+    flex: 1 1 320px;
+    min-width: 260px;
+    max-width: 370px;
+    text-align: left;
+    font-size: 1.32rem; // Groter gemaakt
+    color: #1a1a1a;
+    line-height: 2.05;  // Meer ruimte
+    margin: 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.7rem;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.18s, box-shadow 0.18s;
+
+    // Glans effect
+    &::after {
+      content: "";
+      position: absolute;
+      top: -40px;
+      left: -40px;
+      width: 120px;
+      height: 120px;
+      background: radial-gradient(circle, #eaf3ff 0%, transparent 80%);
+      opacity: 0.5;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    &:hover {
+      transform: translateY(-6px) scale(1.03);
+      box-shadow: 0 12px 40px rgba(0, 122, 255, 0.18);
+    }
+  }
+
+  .about-block:first-child {
+    font-weight: 700;
+    color: #007aff;
+    background: linear-gradient(120deg, #e6f5ff 80%, #f4f8fb 100%);
+    box-shadow: 0 6px 32px rgba(0,122,255,0.10);
+  }
+}
+
+// Responsive
+@media (max-width: 900px) {
+  .about {
+    padding: 2.5rem 0.5rem 2.5rem 0.5rem;
+    max-width: 98vw;
+  }
+  .about-flex {
+    gap: 1.2rem;
+  }
+  .about-block {
+    min-width: 220px;
+    max-width: 100%;
+    font-size: 1.18rem; // Ook op mobiel groter
+    padding: 1.3rem 0.9rem 1.3rem 0.9rem;
+  }
+  .about h2 {
+    font-size: 2.3rem;
+  }
 }

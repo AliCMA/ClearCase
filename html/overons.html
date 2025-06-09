@@ -1,39 +1,71 @@
 <!DOCTYPE html>
 <html lang="nl">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Over ons - ClearCase</title>
-  <link rel="stylesheet" href="../css/style.css"/>
+  <link rel="stylesheet" href="../css/style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/8a111eb1bb.js" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/8a111eb1bb.js" crossorigin="anonymous"></script>
 
   <script src="../js/script.js" defer></script>
 </head>
-<body>
-  <header class="header">
-    <div class="container nav">
-      <h1 class="logo">ClearCase</h1>
-      <nav class="navigation">
-        <ul>
-          <li><a href="index.html#home">Home</a></li>
-          <li><a href="producten.html">Producten</a></li>
-          <li><a href="overons.html">Over ons</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-      <a href="winkelmandje.html" class="cart"><i class="fa-solid fa-cart-shopping"></i> <span id="cart-count">0</span></a>
-    </div>
-  </header>
 
-  <main>
-    <section class="about">
-      <div class="container">
-        <h2>Over ClearCase</h2>
-        <p>Wij geloven dat elk Apple-toestel een hoesje verdient dat zowel beschermt als een statement maakt. Bij ClearCase combineren we kwaliteit, design en functionaliteit.</p>
-      </div>
-    </section>
-  </main>
+<body>
+  <!-- Vervang de header in al je HTML-bestanden door deze structuur -->
+<header class="header">
+  <div class="container nav">
+    <h1 class="logo">ClearCase</h1>
+    <button class="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="main-nav">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav class="navigation" id="main-nav">
+      <ul>
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="producten.html">Producten</a></li>
+        <li><a href="overons.html">Over ons</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li class="cart-mobile">
+          <a href="winkelmandje.html" class="cart">
+            <svg width="22" height="22" viewBox="0 0 576 512" fill="currentColor" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+              <path d="M528.12 301.319l47.273-208A16 16 0 0 0 560 80H120l-9.4-44.5A24 24 0 0 0 87 16H24A16 16 0 0 0 24 48h49.6l70.2 332.3A64 64 0 1 0 256 464h192a64 64 0 1 0 61.6-80.3l-17.2-77.1zM504 416a32 32 0 1 1-32-32 32 32 0 0 1 32 32zm-288 0a32 32 0 1 1-32-32 32 32 0 0 1 32 32zm272-96H176.42l-7.2-32h315.38z"/>
+            </svg>
+            <span id="cart-count">0</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <a href="winkelmandje.html" class="cart cart-desktop">
+      <svg width="22" height="22" viewBox="0 0 576 512" fill="currentColor" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+        <path d="M528.12 301.319l47.273-208A16 16 0 0 0 560 80H120l-9.4-44.5A24 24 0 0 0 87 16H24A16 16 0 0 0 24 48h49.6l70.2 332.3A64 64 0 1 0 256 464h192a64 64 0 1 0 61.6-80.3l-17.2-77.1zM504 416a32 32 0 1 1-32-32 32 32 0 0 1 32 32zm-288 0a32 32 0 1 1-32-32 32 32 0 0 1 32 32zm272-96H176.42l-7.2-32h315.38z"/>
+      </svg>
+      <span id="cart-count-desktop">0</span>
+    </a>
+  </div>
+</header>
+
+<main>
+  <section class="about">
+    <div class="container">
+      <h2>Over ClearCase</h2>
+      <p>
+        ClearCase is ontstaan uit een passie voor innovatie en stijl. Wij geloven dat jouw iPhone niet alleen optimale bescherming verdient, maar ook een hoesje dat jouw persoonlijkheid weerspiegelt. Daarom combineren wij hoogwaardige materialen met een strak, modern design.
+      </p>
+      <p>
+        Ons assortiment bestaat uit zorgvuldig geselecteerde iPhone hoesjes die niet alleen beschermen tegen krassen, stoten en vallen, maar ook een stijlvolle toevoeging zijn aan jouw dagelijkse look. Elk product wordt uitvoerig getest op kwaliteit, duurzaamheid en gebruiksgemak.
+      </p>
+      <p>
+        Bij ClearCase staat klanttevredenheid centraal. We streven naar snelle levering, uitstekende service en eerlijke prijzen. Of je nu op zoek bent naar een minimalistisch transparant hoesje of een opvallend design, bij ons vind je altijd een hoesje dat bij jou past.
+      </p>
+      <p>
+        Kies voor zekerheid, stijl en service. Kies voor ClearCase – jouw specialist in iPhone hoesjes!
+      </p>
+    </div>
+  </section>
+</main>
 
   <footer class="footer">
     <div class="container">
@@ -42,4 +74,5 @@
   </footer>
 
 </body>
+
 </html>

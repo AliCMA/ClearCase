@@ -9,6 +9,29 @@
 }
 
 
+
+.remove-item {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  background: none;
+  border: none;
+  color: #ff3b3b;
+  font-size: 1.6rem;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 2;
+  transition: color 0.15s;
+  line-height: 1;
+  padding: 0;
+}
+.remove-item:hover {
+  color: #d10000;
+}
+.product-card {
+  position: relative;
+}
+
 .cart-products h2 {
   text-align: center;
   margin-bottom: 2rem;

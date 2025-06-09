@@ -11,20 +11,30 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 
 .logo {
   font-weight: 700;
   font-size: 1.5rem;
   color: #007aff;
+  order: 1;
+}
+
+.navigation {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+  order: 2;
 }
 
 .navigation ul {
   display: flex;
-  gap: 1rem;
+  gap: 2.5rem;
   list-style: none;
   padding: 0;
   margin: 0;
+  justify-content: center;
 }
 
 .navigation a {
@@ -41,4 +51,101 @@
 .cart {
   font-size: 1.2rem;
   cursor: pointer;
+}
+
+.cart-mobile {
+  display: none;
+}
+
+.cart-desktop {
+  display: flex;
+  order: 3;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1100;
+  margin-left: auto;
+  margin-right: 0;
+  order: 4; // Zet hamburger altijd helemaal rechts
+  position: relative;
+  span {
+    display: block;
+    height: 4px;
+    width: 28px;
+    background: #007aff;
+    margin: 4px 0;
+    border-radius: 2px;
+    transition: 0.3s;
+  }
+}
+
+@media (max-width: 600px) {
+  .cart-desktop {
+    display: none !important;
+  }
+  .cart-mobile {
+    display: block !important;
+    padding: 0.7rem 1.5rem;
+  }
+  .cart-mobile .cart {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 1.2rem;
+  }
+  .hamburger {
+    display: flex;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 0;
+  }
+  .nav {
+    flex-wrap: wrap;
+  }
+  .navigation {
+    justify-content: flex-start;
+  }
+  .navigation ul {
+    position: absolute;
+    top: 64px;
+    right: 0;
+    background: #fff;
+    flex-direction: column;
+    gap: 0;
+    width: 180px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+    padding: 1rem 0;
+    margin: 0;
+    border-radius: 0 0 12px 12px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: opacity 0.2s, transform 0.2s;
+    z-index: 1050;
+    justify-content: flex-start;
+  }
+  .navigation ul.open {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+  .navigation li {
+    margin: 0;
+    padding: 0.7rem 1.5rem;
+    text-align: left;
+    border-bottom: 1px solid #f0f0f0;
+    &:last-child {
+      border-bottom: none;
+    }
+  }
 }
