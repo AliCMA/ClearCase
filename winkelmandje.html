@@ -108,15 +108,16 @@
         if (window.cartCountMobile) cartCountMobile.textContent = cartProducts.length;
         if (window.cartCountDesktop) cartCountDesktop.textContent = cartProducts.length;
 
-        document.querySelectorAll('.remove-item').forEach(btn => {
-          btn.addEventListener('click', function () {
-            const index = parseInt(this.closest('.product-card').getAttribute('data-index'));
-            cartProducts.splice(index, 1);
-            localStorage.setItem("cartProducts", JSON.stringify(cartProducts));
-            renderCart();
-            if (typeof showCartPopup === "function") showCartPopup("Item verwijderd uit winkelmandje!");
-          });
-        });
+       document.querySelectorAll('.remove-item').forEach(btn => {
+  btn.addEventListener('click', function () {
+    const index = parseInt(this.closest('.product-card').getAttribute('data-index'));
+    cartProducts.splice(index, 1);
+    localStorage.setItem("cartProducts", JSON.stringify(cartProducts));
+    renderCart();
+    if (typeof updateCartCount === "function") updateCartCount(); // <-- Voeg deze regel toe
+    if (typeof showCartPopup === "function") showCartPopup("Item verwijderd uit winkelmandje!");
+  });
+});
       }
 
       renderCart();
