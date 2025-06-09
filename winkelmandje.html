@@ -2,100 +2,129 @@
 <html lang="nl">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Winkelmandje - ClearCase</title>
-    <link rel="stylesheet" href="./css/style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/8a111eb1bb.js" crossorigin="anonymous"></script>
-
-    <script src="./js/script.js" defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Winkelmandje - ClearCase</title>
+  <link rel="stylesheet" href="./css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/8a111eb1bb.js" crossorigin="anonymous"></script>
+  <script src="./js/script.js" defer></script>
 </head>
 
 <body>
-   <!-- Vervang de header in al je HTML-bestanden door deze structuur -->
-<header class="header">
-  <div class="container nav">
-    <h1 class="logo">ClearCase</h1>
-    <button class="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="main-nav">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-    <nav class="navigation" id="main-nav">
-      <ul>
-        <li><a href="index.html#home">Home</a></li>
-        <li><a href="producten.html">Producten</a></li>
-        <li><a href="overons.html">Over ons</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li class="cart-mobile">
-          <a href="winkelmandje.html" class="cart">
-            <svg width="22" height="22" viewBox="0 0 576 512" fill="currentColor" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
-              <path d="M528.12 301.319l47.273-208A16 16 0 0 0 560 80H120l-9.4-44.5A24 24 0 0 0 87 16H24A16 16 0 0 0 24 48h49.6l70.2 332.3A64 64 0 1 0 256 464h192a64 64 0 1 0 61.6-80.3l-17.2-77.1zM504 416a32 32 0 1 1-32-32 32 32 0 0 1 32 32zm-288 0a32 32 0 1 1-32-32 32 32 0 0 1 32 32zm272-96H176.42l-7.2-32h315.38z"/>
-            </svg>
-            <span id="cart-count">0</span>
-          </a>
-        </li>
-      </ul>
-    </nav>
-    <a href="winkelmandje.html" class="cart cart-desktop">
-      <svg width="22" height="22" viewBox="0 0 576 512" fill="currentColor" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
-        <path d="M528.12 301.319l47.273-208A16 16 0 0 0 560 80H120l-9.4-44.5A24 24 0 0 0 87 16H24A16 16 0 0 0 24 48h49.6l70.2 332.3A64 64 0 1 0 256 464h192a64 64 0 1 0 61.6-80.3l-17.2-77.1zM504 416a32 32 0 1 1-32-32 32 32 0 0 1 32 32zm-288 0a32 32 0 1 1-32-32 32 32 0 0 1 32 32zm272-96H176.42l-7.2-32h315.38z"/>
-      </svg>
-      <span id="cart-count-desktop">0</span>
-    </a>
-  </div>
-</header>
+  <header class="header">
+    <div class="container nav">
+      <h1 class="logo"><a href="index.html#home">ClearCase</a></h1>
+      <button class="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="main-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="navigation" id="main-nav">
+        <ul>
+          <li><a href="index.html#home">Home</a></li>
+          <li><a href="producten.html">Producten</a></li>
+          <li><a href="overons.html">Over ons</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li class="cart-mobile">
+            <a href="winkelmandje.html" class="cart">
+              <svg width="22" height="22" viewBox="0 0 576 512" fill="currentColor" aria-hidden="true" focusable="false"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M528.12 301.319l47.273-208A16 16 0 0 0 560 80H120l-9.4-44.5A24 24 0 0 0 87 16H24A16 16 0 0 0 24 48h49.6l70.2 332.3A64 64 0 1 0 256 464h192a64 64 0 1 0 61.6-80.3l-17.2-77.1zM504 416a32 32 0 1 1-32-32 32 32 0 0 1 32 32zm-288 0a32 32 0 1 1-32-32 32 32 0 0 1 32 32zm272-96H176.42l-7.2-32h315.38z" />
+              </svg>
+              <span id="cart-count-mobile">0</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <a href="winkelmandje.html" class="cart cart-desktop">
+        <svg width="22" height="22" viewBox="0 0 576 512" fill="currentColor" aria-hidden="true" focusable="false"
+          xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M528.12 301.319l47.273-208A16 16 0 0 0 560 80H120l-9.4-44.5A24 24 0 0 0 87 16H24A16 16 0 0 0 24 48h49.6l70.2 332.3A64 64 0 1 0 256 464h192a64 64 0 1 0 61.6-80.3l-17.2-77.1zM504 416a32 32 0 1 1-32-32 32 32 0 0 1 32 32zm-288 0a32 32 0 1 1-32-32 32 32 0 0 1 32 32zm272-96H176.42l-7.2-32h315.38z" />
+        </svg>
+        <span id="cart-count-desktop">0</span>
+      </a>
+    </div>
+  </header>
 
-    <main>
-        <section class="cart-products">
-            <div class="container">
-                <h2>Jouw winkelmandje</h2>
-                <div class="product-grid" id="cart-items"></div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 ClearCase. Alle rechten voorbehouden.</p>
+  <main>
+    <section class="cart-products">
+      <div class="container">
+        <h2>Jouw winkelmandje</h2>
+        <div class="product-grid" id="cart-items"></div>
+        <!-- Afreken-gedeelte buiten de product-grid -->
+        <div class="checkout-section">
+          <h3>Totaal</h3>
+          <div id="cart-total" class="cart-total">€0,00</div>
+          <button id="checkout-btn" class="btn checkout-btn">Afrekenen</button>
         </div>
-    </footer>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 ClearCase. Alle rechten voorbehouden.</p>
+    </div>
+  </footer>
+  <div id="cart-popup" class="cart-popup">Toegevoegd aan winkelmandje!</div>
   <script>
-    // Toon producten uit localStorage in dezelfde stijl als producten.html
-    const cartItemsDiv = document.getElementById("cart-items");
-    let cartProducts = JSON.parse(localStorage.getItem("cartProducts")) || [];
+    document.addEventListener('DOMContentLoaded', function () {
+      const cartItemsDiv = document.getElementById("cart-items");
+      const cartTotalDiv = document.getElementById("cart-total");
+      const checkoutBtn = document.getElementById("checkout-btn");
 
-    function renderCart() {
+      // Haal producten uit localStorage
+      window.cartProducts = JSON.parse(localStorage.getItem("cartProducts")) || [];
+
+      function getTotal() {
+        if (!window.cartProducts) return 0;
+        return cartProducts.reduce((sum, prod) => {
+          // Prijs als getal optellen, fallback naar 0 als geen getal
+          return sum + (typeof prod.price === "number" ? prod.price : 0);
+        }, 0);
+      }
+
+      function renderCart() {
+        if (typeof cartProducts === "undefined") return;
         if (cartProducts.length === 0) {
-            cartItemsDiv.innerHTML = "<p>Je winkelmandje is leeg.</p>";
+          cartItemsDiv.innerHTML = "<p>Je winkelmandje is leeg.</p>";
+          cartTotalDiv.textContent = "€0,00";
+          checkoutBtn.disabled = true;
         } else {
-            cartItemsDiv.innerHTML = cartProducts.map((prod, i) => `
-                <div class="product-card" data-index="${i}">
-                  <button class="remove-item" title="Verwijder" aria-label="Verwijder dit product">&times;</button>
-                  <img src="${prod.img}" alt="${prod.title}">
-                  <h3>${prod.title}</h3>
-                  <p>${prod.price}</p>
-                </div>
-            `).join('');
+          cartItemsDiv.innerHTML = cartProducts.map((prod, i) => `
+            <div class="product-card" data-index="${i}">
+              <button class="remove-item" title="Verwijder" aria-label="Verwijder dit product">&times;</button>
+              <img src="${prod.img}" alt="${prod.title}">
+              <h3>${prod.title}</h3>
+              <p>€${typeof prod.price === "number" ? prod.price.toFixed(2).replace('.', ',') : prod.price}</p>
+            </div>
+          `).join('');
+          cartTotalDiv.textContent = "€" + getTotal().toFixed(2).replace('.', ',');
+          checkoutBtn.disabled = false;
         }
-        // Update het winkelmandje-aantal in de header
-        const cartCount = document.getElementById("cart-count");
-        if (cartCount) cartCount.textContent = cartProducts.length;
+        if (window.cartCountMobile) cartCountMobile.textContent = cartProducts.length;
+        if (window.cartCountDesktop) cartCountDesktop.textContent = cartProducts.length;
 
-        // Voeg event listeners toe aan de kruisjes
         document.querySelectorAll('.remove-item').forEach(btn => {
-            btn.addEventListener('click', function(e) {
-                const index = parseInt(this.closest('.product-card').getAttribute('data-index'));
-                cartProducts.splice(index, 1);
-                localStorage.setItem("cartProducts", JSON.stringify(cartProducts));
-                renderCart();
-            });
+          btn.addEventListener('click', function () {
+            const index = parseInt(this.closest('.product-card').getAttribute('data-index'));
+            cartProducts.splice(index, 1);
+            localStorage.setItem("cartProducts", JSON.stringify(cartProducts));
+            renderCart();
+            if (typeof showCartPopup === "function") showCartPopup("Item verwijderd uit winkelmandje!");
+          });
         });
-    }
+      }
 
-    renderCart();
-</script>
+      renderCart();
+
+      checkoutBtn.addEventListener('click', function () {
+        alert("Afrekenen wordt binnenkort mogelijk!");
+      });
+    });
+  </script>
 </body>
-
 </html>

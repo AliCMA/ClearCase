@@ -1,0 +1,23 @@
+.cart-popup {
+  display: none;
+  position: fixed;
+  left: 50%;
+  top: 2.5rem;
+  transform: translateX(-50%);
+  background: #007aff;
+  color: #fff;
+  padding: 1rem 2.2rem;
+  border-radius: 2rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+  box-shadow: 0 8px 32px rgba(0,122,255,0.18);
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s, top 0.3s;
+}
+.cart-popup.show {
+  display: block;
+  opacity: 1;
+  top: 4rem;
+}

@@ -25,6 +25,19 @@ footer {
   flex-shrink: 0;
 }
 
+.logo a {
+  color: #007aff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.logo a:hover,
+.logo a:focus {
+  text-decoration: underline;
+  color: #005fcc;
+}
+
 .container {
   width: 90%;
   max-width: 1200px;

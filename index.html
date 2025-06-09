@@ -12,44 +12,46 @@
 </head>
 
 <body>
+  <!-- Popup voor winkelmandje -->
+  <div id="cart-popup" class="cart-popup">Toegevoegd aan winkelmandje!</div>
+
   <header class="header">
     <div class="container nav">
-      <h1 class="logo">ClearCase</h1>
+      <h1 class="logo"><a href="index.html#home">ClearCase</a></h1>
       <button class="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="main-nav">
         <span></span>
         <span></span>
         <span></span>
       </button>
       <nav class="navigation" id="main-nav">
-  <ul>
-    <li><a href="index.html#home">Home</a></li>
-    <li><a href="producten.html">Producten</a></li>
-    <li><a href="overons.html">Over ons</a></li>
-    <li><a href="contact.html">Contact</a></li>
-    <li class="cart-mobile">
-      <a href="winkelmandje.html" class="cart">
+        <ul>
+          <li><a href="index.html#home">Home</a></li>
+          <li><a href="producten.html">Producten</a></li>
+          <li><a href="overons.html">Over ons</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li class="cart-mobile">
+            <a href="winkelmandje.html" class="cart">
+              <svg width="22" height="22" viewBox="0 0 576 512" fill="currentColor" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+                <path d="M528.12 301.319l47.273-208A16 16 0 0 0 560 80H120l-9.4-44.5A24 24 0 0 0 87 16H24A16 16 0 0 0 24 48h49.6l70.2 332.3A64 64 0 1 0 256 464h192a64 64 0 1 0 61.6-80.3l-17.2-77.1zM504 416a32 32 0 1 1-32-32 32 32 0 0 1 32 32zm-288 0a32 32 0 1 1-32-32 32 32 0 0 1 32 32zm272-96H176.42l-7.2-32h315.38z"/>
+              </svg>
+              <span id="cart-count-mobile">0</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <a href="winkelmandje.html" class="cart cart-desktop">
         <svg width="22" height="22" viewBox="0 0 576 512" fill="currentColor" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
           <path d="M528.12 301.319l47.273-208A16 16 0 0 0 560 80H120l-9.4-44.5A24 24 0 0 0 87 16H24A16 16 0 0 0 24 48h49.6l70.2 332.3A64 64 0 1 0 256 464h192a64 64 0 1 0 61.6-80.3l-17.2-77.1zM504 416a32 32 0 1 1-32-32 32 32 0 0 1 32 32zm-288 0a32 32 0 1 1-32-32 32 32 0 0 1 32 32zm272-96H176.42l-7.2-32h315.38z"/>
         </svg>
-        <span id="cart-count">0</span>
+        <span id="cart-count-desktop">0</span>
       </a>
-    </li>
-  </ul>
-</nav>
-<!-- Laat de originele winkelmandje-link buiten de nav ook staan -->
-<a href="winkelmandje.html" class="cart cart-desktop">
-  <svg width="22" height="22" viewBox="0 0 576 512" fill="currentColor" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
-    <path d="M528.12 301.319l47.273-208A16 16 0 0 0 560 80H120l-9.4-44.5A24 24 0 0 0 87 16H24A16 16 0 0 0 24 48h49.6l70.2 332.3A64 64 0 1 0 256 464h192a64 64 0 1 0 61.6-80.3l-17.2-77.1zM504 416a32 32 0 1 1-32-32 32 32 0 0 1 32 32zm-288 0a32 32 0 1 1-32-32 32 32 0 0 1 32 32zm272-96H176.42l-7.2-32h315.38z"/>
-  </svg>
-  <span id="cart-count-desktop">0</span>
-</a>
     </div>
   </header>
 
   <main>
     <section class="hero" id="home">
       <div class="container">
-        <h2>Premium Hoesjes voor iPhone Toheed Malik Asmat</h2>
+        <h2>Premium Hoesjes voor iPhone</h2>
         <p>Bescherming en stijl, perfect gecombineerd.</p>
         <a href="producten.html" class="btn">Bekijk Producten</a>
       </div>
@@ -91,6 +93,5 @@
       <p>&copy; 2025 ClearCase. Alle rechten voorbehouden.</p>
     </div>
   </footer>
-
 </body>
 </html>
